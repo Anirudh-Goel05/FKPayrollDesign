@@ -4,11 +4,9 @@ import java.util.*;
 public class TimeRecord{
 	public ArrayList<TimeReceipts> myTimeReceipts = new ArrayList<>();
 	private HourlyEmployee emp;
-	int timeRecordId;
-
+	
 	TimeRecord(HourlyEmployee emp){
 		this.emp = emp;
-		this.timeRecordId = emp.empNumber;
 	}
 
 	public void addNewTimeReceipt(){

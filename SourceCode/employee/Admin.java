@@ -31,24 +31,41 @@ public class Admin{
 		}
 	}
 
+	
+	
 	public static void main(String[] args) {
 		// Create some employees
 		addHourlyEmployee();
 		addHourlyEmployee();
 		addMonthlyEmployee();
+		addMonthlyEmployee();
 
 		printAllEmployees();
 		
-		// Add time receipt
-		((HourlyEmployee)(employeeList.get(0))).createTimeReceipt();
-		((HourlyEmployee)(employeeList.get(1))).createTimeReceipt();
-		((HourlyEmployee)(employeeList.get(1))).createTimeReceipt();
 		
 
-		System.out.println( ((HourlyEmployee)(employeeList.get(0))).myTimeRecord.myTimeReceipts.size() );
-		System.out.println( ((HourlyEmployee)(employeeList.get(1))).myTimeRecord.myTimeReceipts.size() );
+		// ------------ This piece is to add Time Records and then test them -------------------
+		// Add time receipt
+		// ((HourlyEmployee)(employeeList.get(0))).createTimeReceipt();
+		// ((HourlyEmployee)(employeeList.get(1))).createTimeReceipt();
+		// System.out.println( ((HourlyEmployee)(employeeList.get(0))).myTimeRecord.myTimeReceipts.size() );
+		// System.out.println( ((HourlyEmployee)(employeeList.get(1))).myTimeRecord.myTimeReceipts.size() );
 				
-		Date dueDate = new Date();
-		getAllDues(dueDate);
+		// Date dueDate = new Date();
+		// getAllDues(dueDate);
+
+		// ------------------------- END ---------------------------------
+
+
+		// ---------------- This piece is to add SalesRecords and then test them --------------------
+		((MonthlyEmployee)(employeeList.get(2))).createSalesRecord();
+		((MonthlyEmployee)(employeeList.get(3))).createSalesRecord();
+		((MonthlyEmployee)(employeeList.get(3))).createSalesRecord();
+		((MonthlyEmployee)(employeeList.get(3))).createSalesRecord();
+
+		System.out.println( ((MonthlyEmployee)(employeeList.get(2))).mySalesRecord.mySalesReceipts.size() );
+		System.out.println( ((MonthlyEmployee)(employeeList.get(3))).mySalesRecord.mySalesReceipts.size() );
+		
+
 	}
 }
