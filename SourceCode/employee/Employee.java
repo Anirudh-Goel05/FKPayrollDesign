@@ -1,10 +1,12 @@
 package employee;
+import java.util.*;
 
-public class Employee{
-	private String name;
-	private int age;
-	private int empNumber;
+abstract public class Employee{
+	protected String name;
+	protected int age;
+	protected int empNumber;
 	private static int totalEmp;
+	protected Date lastPaymentDate;
 
 	Employee(){
 		totalEmp += 1;
@@ -15,5 +17,14 @@ public class Employee{
 		this.name = name;
 		this.age = age;
 	}
-	
+
+	public String toString(){
+		String rs = "[Name: " + name +" , Age: " + age +" ]";
+		return rs;
+	}
+	abstract public void setEmployeeDetails();
+
+	// public boolean changeDetails();
+	// Double getPayment();  
+
 }

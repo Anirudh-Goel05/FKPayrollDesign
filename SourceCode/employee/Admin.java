@@ -4,20 +4,27 @@ import java.util.*;
 public class Admin{
 	private static ArrayList<Employee> employeeList = new ArrayList<>();
 	
-	public static boolean addEmployee(){
-		Employee emp1 = new Employee("Anirudh",10);
-		Employee emp2 = new Employee("Anuradha",20);
-		
-		employeeList.add(emp1);
-		employeeList.add(emp2);
+	public static void addHourlyEmployee(){
+		Employee emp = new HourlyEmployee("Ramu",20);
+		emp.setEmployeeDetails();
+		employeeList.add(emp);
+	}
 
-		for(Employee e:employeeList){
-			System.out.println(e);
+	public static void addMonthlyEmployee(){
+		Employee emp = new MonthlyEmployee("Anirudh",30);
+		emp.setEmployeeDetails();
+		employeeList.add(emp);
+	}
+
+	public static void printAllEmployees(){
+		for(Employee emp: employeeList){
+			System.out.println(emp);
 		}
-		return true;
 	}
 
 	public static void main(String[] args) {
-		addEmployee();
+		addHourlyEmployee();
+		addMonthlyEmployee();
+		printAllEmployees();
 	}
 }
