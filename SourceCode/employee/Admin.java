@@ -3,17 +3,21 @@ import java.util.*;
 
 public class Admin{
 	private static ArrayList<Employee> employeeList = new ArrayList<>();
+	private static ArrayList<HourlyEmployee> hourlyEmployeeList = new ArrayList<>();
+	private static ArrayList<MonthlyEmployee> monthlyEmployeeList = new ArrayList<>();
 	
 	public static void addHourlyEmployee(){
-		Employee emp = new HourlyEmployee("Ramu",20);
+		HourlyEmployee emp = new HourlyEmployee("Ramu",20);
 		emp.setEmployeeDetails();
 		employeeList.add(emp);
+		hourlyEmployeeList.add(emp);
 	}
 
 	public static void addMonthlyEmployee(){
-		Employee emp = new MonthlyEmployee("Anirudh",30);
+		MonthlyEmployee emp = new MonthlyEmployee("Anirudh",30);
 		emp.setEmployeeDetails();
 		employeeList.add(emp);
+		monthlyEmployeeList.add(emp);
 	}
 
 	public static void printAllEmployees(){
@@ -31,6 +35,16 @@ public class Admin{
 		}
 	}
 
+	public static void getSalesDues(Date dueDate){
+		double totalSalesDues = 0;
+		System.out.println("Calulcating sales due....");
+		for(MonthlyEmployee e:monthlyEmployeeList){
+			double due = e.getSalesDues(dueDate);
+			System.out.println(e + ": "  + due + " " + e.mySalesRecord.mySalesReceipts.size());
+			totalSalesDues += due;
+		}
+		System.out.println(totalSalesDues);
+	}
 	
 	
 	public static void main(String[] args) {
@@ -58,14 +72,15 @@ public class Admin{
 
 
 		// ---------------- This piece is to add SalesRecords and then test them --------------------
-		((MonthlyEmployee)(employeeList.get(2))).createSalesRecord();
-		((MonthlyEmployee)(employeeList.get(3))).createSalesRecord();
-		((MonthlyEmployee)(employeeList.get(3))).createSalesRecord();
-		((MonthlyEmployee)(employeeList.get(3))).createSalesRecord();
-
-		System.out.println( ((MonthlyEmployee)(employeeList.get(2))).mySalesRecord.mySalesReceipts.size() );
-		System.out.println( ((MonthlyEmployee)(employeeList.get(3))).mySalesRecord.mySalesReceipts.size() );
+		monthlyEmployeeList.get(0).createSalesRecord();
+		monthlyEmployeeList.get(0).createSalesRecord();
+		monthlyEmployeeList.get(1).createSalesRecord();
+		monthlyEmployeeList.get(0).createSalesRecord();
+		getSalesDues(new Date());
+		// System.out.println( monthlyEmployeeList.get(0).mySalesRecord.mySalesReceipts.size() );
+		// System.out.println( ((MonthlyEmployee)(employeeList.get(2))).mySalesRecord.mySalesReceipts.size() );
+		// System.out.println( monthlyEmployeeList.get(1).mySalesRecord.mySalesReceipts.size() );
+		// System.out.println( ((MonthlyEmployee)(employeeList.get(3))).mySalesRecord.mySalesReceipts.size() );
 		
-
 	}
 }

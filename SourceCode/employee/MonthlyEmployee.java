@@ -7,7 +7,7 @@ public class MonthlyEmployee extends Employee{
 	UnionRecords myUnionRecord;
 	private double commissionPercent;
 	private int monthlySalary = 0;
-	private int salesPayDay = 5;
+	private int salesPayDay = 6;
 
 	MonthlyEmployee(String name,int age){
 		super(name,age);
@@ -33,10 +33,10 @@ public class MonthlyEmployee extends Employee{
 	}
 
 	public Double getSalesDues(Date dueDate){
-		if(dueDate.getDay() == salesPayDay){
+		// if(dueDate.getDay() == salesPayDay){
 			return mySalesRecord.getSalesDues(dueDate);
-		}
-		return 0d;
+		// }
+		// return 0d;
 	}
 	
 

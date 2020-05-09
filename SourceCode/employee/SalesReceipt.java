@@ -20,5 +20,8 @@ public class SalesReceipt{
 	public Double getAmount(){
 		return amount;
 	}
+	public String toString(){
+		return saleDate + " " + amount;
+	}
 
 }

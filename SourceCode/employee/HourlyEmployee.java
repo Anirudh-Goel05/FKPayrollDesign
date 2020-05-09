@@ -2,9 +2,10 @@ package employee;
 import java.util.*;
 
 public class HourlyEmployee extends Employee{
-    private int myRate;
-    private int paymentDay = 6;
     public TimeRecord myTimeRecord;
+    public Date lastPaymentDate;
+    private int myRate;
+    int paymentDay=5; // For Friday. Can be changed in the future
 
     HourlyEmployee(String name,int age){
     	super(name,age);

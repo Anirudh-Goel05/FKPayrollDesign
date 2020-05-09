@@ -24,8 +24,7 @@ abstract public class Employee{
 	}
 	abstract public void setEmployeeDetails();
 	abstract public Double getTotalDues(Date dueDate);
-
 	// public boolean changeDetails();
 	// Double getPayment();  
-
+	
 }
