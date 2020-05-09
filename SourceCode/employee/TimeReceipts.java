@@ -3,27 +3,30 @@ import java.util.*;
 
 public class TimeReceipts{
 	private int hours;
-	private Employee emp;
+	private HourlyEmployee emp;
 	Date date;
 
-	TimeReceipts(Employee emp){
+	TimeReceipts(HourlyEmployee emp){
 		this.emp = emp;
 	}
 
-	// public boolean createNewTimeReceipt(){
-	// 	Scanner sc = new Scanner(System.in);
-	// 	System.out.println("Enter number of hours:");
-	// 	hours = sc.nextInt();
-	// 	System.out.println("Enter the date:");	
-	// 	date = new Date(sc.nextLine());
-	// 	return true;
-	// }
+	public void createNewTimeReceipt(){
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter number of hours:");
+		this.hours = sc.nextInt();
+		this.date = new Date();	
+	}
 
-	// public Double getTimeReceiptPayment(){
-	// 	Double total=0.0D;
-	// 	total += emp.myRate * Math.min(hours,8);
-	// 	hours -= 8;
-	// 	total += (1.5*emp.myRate) * Math.max(hours,0);
-	// 	return total;
-	// }
+	public String toString(){
+		String myString = emp.toString() + ": [" + "Hours: " + hours + " Date:" + date + "]";
+		return myString;
+	}
+	public Double getPayment(){
+		Double total=0d;
+		int empRate = emp.getMyRate();
+		total += empRate * Math.min(hours,8);
+		hours -= 8;
+		total += (1.5*empRate) * Math.max(hours,0);
+		return total;
+	}
 }
