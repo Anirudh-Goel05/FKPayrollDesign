@@ -73,9 +73,9 @@ public class Admin{
 
 		// ---------------- This piece is to add SalesRecords and then test them --------------------
 		monthlyEmployeeList.get(0).createSalesRecord();
-		monthlyEmployeeList.get(0).createSalesRecord();
 		monthlyEmployeeList.get(1).createSalesRecord();
-		monthlyEmployeeList.get(0).createSalesRecord();
+		addMonthlyEmployee();
+		monthlyEmployeeList.get(2).createSalesRecord();
 		getSalesDues(new Date());
 		// System.out.println( monthlyEmployeeList.get(0).mySalesRecord.mySalesReceipts.size() );
 		// System.out.println( ((MonthlyEmployee)(employeeList.get(2))).mySalesRecord.mySalesReceipts.size() );
