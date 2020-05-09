@@ -3,7 +3,7 @@ import java.util.*;
 
 public class HourlyEmployee extends Employee{
     private int myRate;
-    private int paymentDay = 5;
+    private int paymentDay = 6;
     public TimeRecord myTimeRecord;
 
     HourlyEmployee(String name,int age){
@@ -32,7 +32,12 @@ public class HourlyEmployee extends Employee{
     }
 
     public Double getTotalDues(Date dueDate){
-    	double weeklyWage = myTimeRecord.getTotalDues(dueDate);
+    	if(dueDate.getDay() != paymentDay){
+    		return 0d;
+    	}
+
+		double weeklyWage = 0d;
+		weeklyWage += myTimeRecord.getTotalDues(dueDate);
     	// TODO 
     	// Deduct charges from Union
     	this.lastPaymentDate = dueDate;
