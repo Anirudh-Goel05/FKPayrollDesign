@@ -4,9 +4,11 @@ import java.util.*;
 public class TimeRecord{
 	public ArrayList<TimeReceipts> myTimeReceipts = new ArrayList<>();
 	private HourlyEmployee emp;
+	Date prevPaymentDay;
 	
 	TimeRecord(HourlyEmployee emp){
 		this.emp = emp;
+		prevPaymentDay = new Date();
 	}
 
 	public void addNewTimeReceipt(){
@@ -19,7 +21,7 @@ public class TimeRecord{
 	public double getTotalDues(Date dueDate){
 		double weeklyWage=0d;
 		int i=myTimeReceipts.size()-1;
-		while(i>=0 &&  myTimeReceipts.get(i).date.before(dueDate)){
+		while(i>=0 &&  myTimeReceipts.get(i).date.before(dueDate) && myTimeReceipts.get(i).date.after(prevPaymentDay)){
 			weeklyWage += myTimeReceipts.get(i).getPayment();
 			i -=1;
 		}
@@ -27,7 +29,7 @@ public class TimeRecord{
 		// for(TimeReceipts tr:myTimeReceipts){
 		// 	System.out.print(tr +"--");
 		// }
-
+		prevPaymentDay = dueDate;
 		return weeklyWage;
 	}
 

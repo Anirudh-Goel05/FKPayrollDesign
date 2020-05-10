@@ -57,11 +57,21 @@ public class Admin{
 		}
 	}
 
+	public static void runPayrollToday(){
+		Date today = new Date();
+		if(today.getDay() == HourlyEmployee.paymentDay){
+			for(HourlyEmployee hemp : hourlyEmployeeList){
+				double dues = hemp.getTotalDues(today);
+			}
+		}
+
+	}
+
 	public static void main(String[] args) {
 		// Create some employees
 		addHourlyEmployee();
 		addHourlyEmployee();
-		addMonthlyEmployee();
+		addHourlyEmployee();
 		addMonthlyEmployee();
 		addHourlyEmployee();
 
@@ -97,23 +107,44 @@ public class Admin{
 
 		//  --------------------------- Testing Union ----------------------------
 		
+		// hourlyEmployeeList.get(0).createTimeReceipt();
+		// hourlyEmployeeList.get(0).createTimeReceipt();
+		// hourlyEmployeeList.get(1).createTimeReceipt();
 
-		empUnion.addMember(employeeList.get(0));
-		empUnion.addMember(employeeList.get(1));
-		empUnion.addMember(employeeList.get(3));
+
+		// empUnion.addMember(employeeList.get(0));
+		// empUnion.addMember(employeeList.get(1));
+		// empUnion.addMember(employeeList.get(4));
+		// postUnionWeeklyCharges(new Date());
 		
+
 		// empUnion.postWeeklyDues();
 		// empUnion.postServiceCharge(100,employeeList.get(1));
 		// empUnion.postServiceCharge(100,employeeList.get(1));
-		postUnionWeeklyCharges(new Date());
 		// empUnion.postServiceCharge(10,employeeList.get(1));
 		// empUnion.postServiceCharge(30,employeeList.get(0),employeeList.get(3));
-		System.out.println("Employee Union members are:");
-		for(Employee emp:empUnion.unionMembers){
-			System.out.println(emp.toString() + " Dues:" +  emp.myUnionRecord.getTotalDues());	
-		}
+		// System.out.println("Employee Union members are:");
+		// for(Employee emp:empUnion.unionMembers){
+		// 	System.out.println(emp.toString() + " Dues:" +  emp.myUnionRecord.getTotalDues());	
+		// }
 
 		//  ---------------------------- END ---------------------------------
 		
+
+		// ------------- Testing Payroll --------------------------
+		hourlyEmployeeList.get(0).createTimeReceipt();
+		hourlyEmployeeList.get(0).createTimeReceipt();
+		hourlyEmployeeList.get(1).createTimeReceipt();
+		hourlyEmployeeList.get(1).createTimeReceipt();
+		hourlyEmployeeList.get(2).createTimeReceipt();
+		hourlyEmployeeList.get(3).createTimeReceipt();
+
+
+		empUnion.addMember(employeeList.get(0));
+		empUnion.addMember(employeeList.get(1));
+		empUnion.addMember(employeeList.get(4));
+		postUnionWeeklyCharges(new Date());
+
+		runPayrollToday();			
 	}
 }

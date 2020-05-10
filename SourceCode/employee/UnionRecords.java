@@ -11,7 +11,7 @@ public class UnionRecords{
 		dueAmount = 0;
 		serviceCharge = 0;
 	}
-
+	
 	public void postServiceCharge(double serviceCharge){
 		this.serviceCharge += serviceCharge;
 	}
