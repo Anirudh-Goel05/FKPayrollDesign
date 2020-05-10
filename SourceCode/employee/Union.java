@@ -4,7 +4,7 @@ import java.util.*;
 public class Union{
 	public static ArrayList<Employee> unionMembers = new ArrayList<>();
 	String unionName;
-	int postDay=0;
+	static int postDay=0;
 
 	Union(){
 		unionName = "FK-Employee-Union";

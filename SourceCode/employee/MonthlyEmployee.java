@@ -6,13 +6,14 @@ public class MonthlyEmployee extends Employee{
 	SalesRecord mySalesRecord;
 	private double commissionPercent;
 	private int monthlySalary = 0;
-	private int salesPayDay = 6;
+	static int salesPayDay = 6;
 
 	MonthlyEmployee(String name,int age){
 		super(name,age);
 		commissionPercent = 0.10;
 		this.name = this.name + this.empNumber;
 		this.age = this.age + this.empNumber;
+		monthlySalary=100*this.age;
 		lastPaymentDate = new Date();
 		mySalesRecord = new SalesRecord(this);
 	}
@@ -25,16 +26,20 @@ public class MonthlyEmployee extends Employee{
 	}
 	
 	public Double getTotalDues(Date dueDate){
-		// TODO add all the dues for a monthly employee
-		System.out.println("Monthly employee ---");
-		return 0d;
+		// TODO add sales payment
+		double totalDues = 0d;
+		totalDues += monthlySalary;
+		double unionDues = 0d;
+		if(myUnionRecord != null){
+			unionDues =  myUnionRecord.getTotalDues();
+		}
+		System.out.println(this.toString() + " Salary: " + totalDues + " UnionDues: " + unionDues );
+		totalDues -= unionDues;
+		return totalDues;
 	}
 
 	public Double getSalesDues(Date dueDate){
-		// if(dueDate.getDay() == salesPayDay){
-			return mySalesRecord.getSalesDues(dueDate);
-		// }
-		// return 0d;
+		return mySalesRecord.getSalesDues(dueDate);
 	}
 	
 

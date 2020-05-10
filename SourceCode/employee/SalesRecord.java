@@ -23,10 +23,9 @@ public class SalesRecord{
 		double commissionPercent = emp.getCommisionPercent();
 		int i=mySalesReceipts.size()-1;	
 
-
+		
 		while(i>=0 &&  mySalesReceipts.get(i).saleDate.before(dueDate) && mySalesReceipts.get(i).saleDate.after(lastCommissionDate)){
 			salesCommision +=  commissionPercent*mySalesReceipts.get(i).getAmount();
-			System.out.print(i +",");
 			i -=1;
 		}
 		lastCommissionDate = dueDate;

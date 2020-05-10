@@ -16,7 +16,7 @@ public class SalesReceipt{
 		this.amount = sc.nextDouble();
 		this.saleDate = new Date();	
 	}
-
+	
 	public Double getAmount(){
 		return amount;
 	}

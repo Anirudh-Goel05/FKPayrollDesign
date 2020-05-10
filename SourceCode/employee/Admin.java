@@ -55,27 +55,51 @@ public class Admin{
 			double amount = sc.nextDouble();
 			empUnion.postServiceCharge(amount,empUnion.unionMembers);
 		}
+
+	}
+
+	private static boolean isLastDateOfMonth(Date date){
+	        // Calendar cal = Calendar.getInstance();
+	        // cal.setTime(date);
+	        // cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+	        // System.out.println(cal.getTime());
+	        // return date.equals(cal.getTime());
+		// TODO -- Implement this
+		return true;
+	}
+	private static boolean isSalesPaymentDay(Date date){
+		// TODO Write logic for this
+		return true;
 	}
 
 	public static void runPayrollToday(){
 		Date today = new Date();
+		// For the hourly employees
+		if(today.getDay() == Union.postDay){
+			empUnion.postWeeklyDues();
+		}
 		if(today.getDay() == HourlyEmployee.paymentDay){
 			for(HourlyEmployee hemp : hourlyEmployeeList){
 				double dues = hemp.getTotalDues(today);
 			}
 		}
-
+		// Now for the monthly employees
+		if(isLastDateOfMonth(today)){
+			for(MonthlyEmployee emp: monthlyEmployeeList){
+				emp.getTotalDues(today);
+			}
+		}
+		if(isSalesPaymentDay(today)){
+			for(MonthlyEmployee emp: monthlyEmployeeList){
+				double salesCommision = emp.getSalesDues(today);
+				System.out.println(emp.toString() + " SalesCom: " + salesCommision +" Size:" + emp.mySalesRecord.mySalesReceipts.size());
+			}			
+		}
+		// TODO post these receipts at some place
 	}
-
+	
 	public static void main(String[] args) {
 		// Create some employees
-		addHourlyEmployee();
-		addHourlyEmployee();
-		addHourlyEmployee();
-		addMonthlyEmployee();
-		addHourlyEmployee();
-
-		printAllEmployees();
 		
 		
 
@@ -132,18 +156,36 @@ public class Admin{
 		
 
 		// ------------- Testing Payroll --------------------------
-		hourlyEmployeeList.get(0).createTimeReceipt();
-		hourlyEmployeeList.get(0).createTimeReceipt();
-		hourlyEmployeeList.get(1).createTimeReceipt();
-		hourlyEmployeeList.get(1).createTimeReceipt();
-		hourlyEmployeeList.get(2).createTimeReceipt();
-		hourlyEmployeeList.get(3).createTimeReceipt();
+		// hourlyEmployeeList.get(1).createTimeReceipt();
+		// hourlyEmployeeList.get(2).createTimeReceipt();
+		// hourlyEmployeeList.get(3).createTimeReceipt();
 
 
-		empUnion.addMember(employeeList.get(0));
-		empUnion.addMember(employeeList.get(1));
-		empUnion.addMember(employeeList.get(4));
-		postUnionWeeklyCharges(new Date());
+		// empUnion.addMember(employeeList.get(0));
+		// empUnion.addMember(employeeList.get(1));
+		// empUnion.addMember(employeeList.get(4));
+		// postUnionWeeklyCharges(new Date())	;
+
+		addMonthlyEmployee();
+		addMonthlyEmployee();
+		addMonthlyEmployee();
+		
+		addHourlyEmployee();
+		addHourlyEmployee();
+
+		hourlyEmployeeList.get(0).createTimeReceipt();
+		// hourlyEmployeeList.get(0).createTimeReceipt();
+		// hourlyEmployeeList.get(1).createTimeReceipt();
+		
+		empUnion.addMember(monthlyEmployeeList.get(0));
+		empUnion.addMember(monthlyEmployeeList.get(1));
+		empUnion.addMember(hourlyEmployeeList.get(1));
+
+		monthlyEmployeeList.get(0).createSalesRecord();
+		monthlyEmployeeList.get(1).createSalesRecord();
+		monthlyEmployeeList.get(2).createSalesRecord();
+
+
 
 		runPayrollToday();			
 	}
