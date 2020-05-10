@@ -28,6 +28,13 @@ public class Union{
 			e.myUnionRecord.postServiceCharge(amount);
 		}
 	}
+	
+	public void postServiceCharge(double amount,ArrayList<Employee> emp){
+		for(Employee e:emp){
+			e.myUnionRecord.postServiceCharge(amount);
+		}
+	}
+
 
 	public String toString(){
 		return unionName + ": " + unionMembers.size();

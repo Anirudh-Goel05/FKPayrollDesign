@@ -50,6 +50,10 @@ public class Admin{
 	public static void postUnionWeeklyCharges(Date today){
 		if(today.getDay() == empUnion.postDay){
 			empUnion.postWeeklyDues();
+			Scanner sc= new Scanner(System.in);
+			System.out.print("Do you want to post service charge on all the members then enter amount: ");
+			double amount = sc.nextDouble();
+			empUnion.postServiceCharge(amount,empUnion.unionMembers);
 		}
 	}
 
@@ -102,6 +106,8 @@ public class Admin{
 		// empUnion.postServiceCharge(100,employeeList.get(1));
 		// empUnion.postServiceCharge(100,employeeList.get(1));
 		postUnionWeeklyCharges(new Date());
+		// empUnion.postServiceCharge(10,employeeList.get(1));
+		// empUnion.postServiceCharge(30,employeeList.get(0),employeeList.get(3));
 		System.out.println("Employee Union members are:");
 		for(Employee emp:empUnion.unionMembers){
 			System.out.println(emp.toString() + " Dues:" +  emp.myUnionRecord.getTotalDues());	
