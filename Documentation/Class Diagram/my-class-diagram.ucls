@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="Admin" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/Admin.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="206" width="269" x="14" y="48"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="Employee" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/Employee.java" binary="false" corner="BOTTOM_LEFT">    
+    <position height="192" width="177" x="337" y="97"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="false" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="HourlyEmployee" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/HourlyEmployee.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="203" x="113" y="268"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="MonthlyEmployee" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/MonthlyEmployee.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="156" width="174" x="535" y="261"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="SalesReceipt" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/SalesReceipt.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="68" width="144" x="690" y="471"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="SalesRecord" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/SalesRecord.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="109" width="228" x="461" y="451"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="TimeRecord" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/TimeRecord.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="110" width="227" x="226" y="452"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="TimeReceipts" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/TimeReceipts.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="102" width="176" x="43" y="451"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="Union" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/Union.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="105" width="194" x="644" y="17"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="UnionRecords" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/UnionRecords.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="123" width="179" x="652" y="125"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="PaymentHistory" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/PaymentHistory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="69" width="117" x="378" y="5"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="PaymentMode" project="FKPayrollDesign" 
+    file="/FKPayrollDesign/SourceCode/employee/PaymentMode.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="65" width="106" x="505" y="7"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
