@@ -4,7 +4,6 @@ import java.util.*;
 
 public class MonthlyEmployee extends Employee{
 	SalesRecord mySalesRecord;
-	UnionRecords myUnionRecord;
 	private double commissionPercent;
 	private int monthlySalary = 0;
 	private int salesPayDay = 6;
@@ -16,7 +15,6 @@ public class MonthlyEmployee extends Employee{
 		this.age = this.age + this.empNumber;
 		lastPaymentDate = new Date();
 		mySalesRecord = new SalesRecord(this);
-		myUnionRecord = new UnionRecords();
 	}
 	public double getCommisionPercent(){
 		return commissionPercent;

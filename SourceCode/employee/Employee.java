@@ -7,6 +7,7 @@ abstract public class Employee{
 	protected int empNumber;
 	private static int totalEmp=0;
 	protected Date lastPaymentDate;
+	protected UnionRecords myUnionRecord;
 
 	Employee(){
 		totalEmp += 1;

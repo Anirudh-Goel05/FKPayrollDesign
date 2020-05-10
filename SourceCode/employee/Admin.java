@@ -5,6 +5,7 @@ public class Admin{
 	private static ArrayList<Employee> employeeList = new ArrayList<>();
 	private static ArrayList<HourlyEmployee> hourlyEmployeeList = new ArrayList<>();
 	private static ArrayList<MonthlyEmployee> monthlyEmployeeList = new ArrayList<>();
+	private static Union empUnion = new Union();
 	
 	public static void addHourlyEmployee(){
 		HourlyEmployee emp = new HourlyEmployee("Ramu",20);
@@ -46,13 +47,19 @@ public class Admin{
 		System.out.println(totalSalesDues);
 	}
 	
-	
+	public static void postUnionWeeklyCharges(Date today){
+		if(today.getDay() == empUnion.postDay){
+			empUnion.postWeeklyDues();
+		}
+	}
+
 	public static void main(String[] args) {
 		// Create some employees
 		addHourlyEmployee();
 		addHourlyEmployee();
 		addMonthlyEmployee();
 		addMonthlyEmployee();
+		addHourlyEmployee();
 
 		printAllEmployees();
 		
@@ -72,15 +79,35 @@ public class Admin{
 
 
 		// ---------------- This piece is to add SalesRecords and then test them --------------------
-		monthlyEmployeeList.get(0).createSalesRecord();
-		monthlyEmployeeList.get(1).createSalesRecord();
-		addMonthlyEmployee();
-		monthlyEmployeeList.get(2).createSalesRecord();
-		getSalesDues(new Date());
+		// monthlyEmployeeList.get(0).createSalesRecord();
+		// monthlyEmployeeList.get(1).createSalesRecord();
+		// addMonthlyEmployee();
+		// monthlyEmployeeList.get(2).createSalesRecord();
+		// getSalesDues(new Date());
 		// System.out.println( monthlyEmployeeList.get(0).mySalesRecord.mySalesReceipts.size() );
 		// System.out.println( ((MonthlyEmployee)(employeeList.get(2))).mySalesRecord.mySalesReceipts.size() );
 		// System.out.println( monthlyEmployeeList.get(1).mySalesRecord.mySalesReceipts.size() );
 		// System.out.println( ((MonthlyEmployee)(employeeList.get(3))).mySalesRecord.mySalesReceipts.size() );
+		//  -----------------------END--------------------------------------------
+
+
+		//  --------------------------- Testing Union ----------------------------
+		
+
+		empUnion.addMember(employeeList.get(0));
+		empUnion.addMember(employeeList.get(1));
+		empUnion.addMember(employeeList.get(3));
+		
+		// empUnion.postWeeklyDues();
+		// empUnion.postServiceCharge(100,employeeList.get(1));
+		// empUnion.postServiceCharge(100,employeeList.get(1));
+		postUnionWeeklyCharges(new Date());
+		System.out.println("Employee Union members are:");
+		for(Employee emp:empUnion.unionMembers){
+			System.out.println(emp.toString() + " Dues:" +  emp.myUnionRecord.getTotalDues());	
+		}
+
+		//  ---------------------------- END ---------------------------------
 		
 	}
 }
