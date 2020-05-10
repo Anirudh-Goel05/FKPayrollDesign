@@ -13,7 +13,7 @@ public class Admin{
 		employeeList.add(emp);
 		hourlyEmployeeList.add(emp);
 	}
-
+	
 	public static void addMonthlyEmployee(){
 		MonthlyEmployee emp = new MonthlyEmployee("Anirudh",30);
 		emp.setEmployeeDetails();

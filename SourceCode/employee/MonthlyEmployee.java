@@ -37,7 +37,7 @@ public class MonthlyEmployee extends Employee{
 		totalDues -= unionDues;
 		return totalDues;
 	}
-
+	
 	public Double getSalesDues(Date dueDate){
 		return mySalesRecord.getSalesDues(dueDate);
 	}

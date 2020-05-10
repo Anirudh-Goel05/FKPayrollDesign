@@ -10,7 +10,7 @@ public class TimeRecord{
 		this.emp = emp;
 		prevPaymentDay = new Date();
 	}
-
+	
 	public void addNewTimeReceipt(){
 		TimeReceipts newTimeReceipt = new TimeReceipts(emp);
 		newTimeReceipt.createNewTimeReceipt();
