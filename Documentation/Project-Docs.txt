@@ -1,0 +1,24 @@
+
+Design Objectives and Approaches:
+	- Aim was to design in such a manner so as the coupling between classes is minimum and a single
+	   class is given a single responsibility
+	- First approach was to design from perspective of database but that failed
+	- Then tried to model based on OOPS concepts:
+		- I have chosen composition as the main way of message passing between classes
+		  This was done so as to provide an API so that even if the Class' way of implementing a method changes, the API would remain the same for other classes.
+
+Assumptions:
+	- Employee are of two distinct types - Hourly Employees and Monthly Employees
+	- Only Monthly employees can post sales receipt and receive commision
+	- Both types can be part of the Union
+	- Every function can be currently done only by the admin class through its static members
+	
+
+Current Limitations
+	- Currenly no database or json file is present to preserve the data. Attempts to do so required
+	   time far greater than I had available.
+	- The input and output has been hardcoded for testing purposes and has been commented out
+	- Many features are yet to be implemented. However the sequence diagram covers all but 2 use 
+	  cases: Modify Employee details and delete Employee are left
+	- Current Design has some coupling between some classes. Employee Interface can be made more   generic
+    
